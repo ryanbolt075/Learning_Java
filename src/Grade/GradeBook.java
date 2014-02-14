@@ -3,7 +3,7 @@ package Grade;
 import java.util.Scanner;
 
 /**
- * Created by ryanbolt on 2/12/2014.
+ * @author ryan.bolt
  */
 public class GradeBook
 {
@@ -18,10 +18,6 @@ public class GradeBook
         return courseName;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
     public void displayMessage()
     {
         System.out.printf("Welcome to the grade book for \n%s! \n\n",getCourseName());
@@ -34,22 +30,39 @@ public class GradeBook
         int total;
         int gradeCounter;
         int grade;
-        int average;
+        double average;
 
         total = 0;
-        gradeCounter = 1;
+        gradeCounter = 0;
 
-        while (gradeCounter <=10 )
+
+        System.out.print("Enter grade or -1 to quit: ");
+        grade = input.nextInt();
+
+
+        while (grade != -1 )
         {
-            System.out.print("Enter grade: ");
-            grade = input.nextInt();
+
             total = total + grade;
             gradeCounter = gradeCounter + 1;
 
-        }
-        average = total / 10;
+            System.out.print("Enter grade or -1 to quit: ");
+            grade = input.nextInt();
 
+        }
+
+        if (gradeCounter !=0)
+        {
+        average = (double) total / gradeCounter;
         System.out.printf("\nTotal of all 10 grades is %d\n",total);
-        System.out.printf("Class average is %d\n",average);
+        System.out.printf("Class average is %.2f\n",average);
+        }
+        else
+        {
+            System.out.println("No grades were entered");
+        }
+
+
+
     }
 }
