@@ -10,6 +10,7 @@ public class GradeBookTest
         GradeBook myGradeBook = new GradeBook("CS101 Intro to Java Programming");
 
         myGradeBook.displayMessage();
-        myGradeBook.determineClassAverage();
+        myGradeBook.inputGrades();
+        myGradeBook.displayGradeReport();
     }
 }
